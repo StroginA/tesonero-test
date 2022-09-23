@@ -1,0 +1,13 @@
+@import "./vars";
+
+html {
+  min-height: 100vh;
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  color: $text;
+  background-color: $white-1;
+  font-size: 16px;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

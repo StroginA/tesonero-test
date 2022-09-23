@@ -1,0 +1,17 @@
+// @import "/node_modules/normalize.css/normalize.css";
+// commented out to add normalizations as needed later
+@import "./vars";
+@import "./base.scss";
+
+.h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+
+
