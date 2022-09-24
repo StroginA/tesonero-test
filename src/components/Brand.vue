@@ -24,7 +24,7 @@
         }
     }
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 992px) {
         .brand {
             &__text {
                 font-size: 2rem;
