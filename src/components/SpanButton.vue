@@ -15,7 +15,7 @@
 </template>
 
 <style scoped lang="scss">
-    @import "../assets/vars";
+    @import "@/assets/vars";
     .button {
     border: 0;
     background-color: transparent;

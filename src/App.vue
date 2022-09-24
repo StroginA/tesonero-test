@@ -1,14 +1,13 @@
 <script setup>
 import Nav from './components/Nav.vue';
+import LandingPage from './components/LandingPage.vue';
 </script>
 
 <template>
   <header>
     <Nav />
   </header>
-
-  <main>
-  </main>
+  <LandingPage />
 </template>
 
 <style scoped>

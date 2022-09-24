@@ -1,11 +1,13 @@
 <script setup>
 import SpanButton from './SpanButton.vue';
+import Brand from './Brand.vue';
 
 </script>
 
 <template>
     <nav class="nav">
         <div class="nav__items">
+            <Brand class="nav__item" />
             <SpanButton class="nav__item">NavItem1</SpanButton>
             <SpanButton class="nav__item">NavItem2</SpanButton>
             <SpanButton isActive class="nav__item">NavItem3</SpanButton>
@@ -25,6 +27,9 @@ import SpanButton from './SpanButton.vue';
     align-items: center;
 
     &__items {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
         &_end {
             margin-left: auto;
         }
