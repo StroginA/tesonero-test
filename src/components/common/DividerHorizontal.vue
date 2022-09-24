@@ -6,7 +6,7 @@
     @import "@/assets/vars";
 
     .divider {
-        width: 11.25rem;
+        width: 184px;
         border-style: solid;
         border-width: 2px;
         border-color: $highlight;
