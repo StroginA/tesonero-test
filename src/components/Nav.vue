@@ -1,5 +1,5 @@
 <script setup>
-import SpanButton from './SpanButton.vue';
+import SpanButton from './common/SpanButton.vue';
 import Brand from './Brand.vue';
 
 </script>
