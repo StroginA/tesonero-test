@@ -22,4 +22,14 @@ import Features from './landing/Features.vue';
         width: 50%;
     }
 }
+
+// touch device
+@media only screen and (max-width: 992px) {
+    .landing-cols {
+        flex-direction: column-reverse;
+        &__col {
+            width: unset;
+        }
+    }
+}
 </style>

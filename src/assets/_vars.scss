@@ -11,3 +11,7 @@ $highlight: #00C368;
 $highlight-shadow: rgba($highlight, 0.4);
 
 $gold: #FFD058;
+
+@mixin filter-grey-1 {
+    filter: brightness(0) saturate(100%) invert(97%) sepia(62%) saturate(4587%) hue-rotate(177deg) brightness(117%) contrast(85%);
+}
