@@ -54,6 +54,10 @@ export default {
 // touch device
 @media only screen and (max-width: 992px) {
     .quote {
+        flex-direction: row-reverse;
+        &_mirrored {
+            flex-direction: row;
+        }
         &__avatar {
             width: 25%;
             margin-right: 1.5rem;

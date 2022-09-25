@@ -42,6 +42,11 @@ import Quote from '../../components/landing/Quote.vue';
     }
     &__other {
         display: flex;
+        flex-wrap: wrap;
+        &>* {
+            flex-basis: 50%;
+            margin-bottom: 1.5rem;
+        }
     }
 }
 
@@ -70,7 +75,7 @@ import Quote from '../../components/landing/Quote.vue';
             }
         }
         &__other {
-            flex-direction: column-reverse;
+            flex-direction: column;
             &>* {
                 margin-bottom: 1.625rem;
             }
