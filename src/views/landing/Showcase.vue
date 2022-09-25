@@ -1,5 +1,5 @@
 <script setup>
-import DividerHorizontal from '../common/DividerHorizontal.vue';
+import DividerHorizontal from '../../components/common/DividerHorizontal.vue';
 
 </script>
 

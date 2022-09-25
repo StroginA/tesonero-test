@@ -1,6 +1,6 @@
 <script setup>
 import Nav from './components/Nav.vue';
-import LandingPage from './components/LandingPage.vue';
+import LandingPage from './views/LandingPage.vue';
 </script>
 
 <template>
