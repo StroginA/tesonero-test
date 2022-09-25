@@ -22,7 +22,10 @@ import Brand from './Brand.vue';
 </template>
 
 <style scoped lang="scss">
+@import "@/assets/vars";
 .nav {
+    background-color: $white-1;
+    z-index: 10;
     &__container {
         height: 10rem;
         margin: 0 5rem;
@@ -64,7 +67,7 @@ import Brand from './Brand.vue';
     @media only screen and (max-width: 992px) {
         .nav {
             &__container {
-                height: 7.5rem;
+                height: 5.25rem;
             }
 
             &__brand {
