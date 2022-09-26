@@ -1,39 +1,55 @@
 <script setup>
+import { ref } from 'vue';
 import DividerHorizontal from '../../components/common/DividerHorizontal.vue';
 import FeatureDropdown from '../../components/landing/FeatureDropdown.vue';
 
-const features = [
+const features = ref([
     {
         id: 0,
+        isActive: false,
         iconSrc: "/src/assets/icons/features_items/Device.svg",
         title: "Lorem ipsum, dolor sit amet adipisicing elit.",
         body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
     },
     {
         id: 1,
+        isActive: false,
         iconSrc: "/src/assets/icons/features_items/LED.svg",
         title: "Lorem ipsum, dolor sit amet adipisicing elit.",
         body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
     },
     {
         id: 2,
+        isActive: false,
         iconSrc: "/src/assets/icons/features_items/LightOff.svg",
         title: "Lorem ipsum, dolor sit amet adipisicing elit.",
         body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
     },
     {
         id: 3,
+        isActive: false,
         iconSrc: "/src/assets/icons/features_items/Splitter.svg",
         title: "Lorem ipsum, dolor sit amet adipisicing elit.",
         body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
     },
     {
         id: 4,
+        isActive: false,
         iconSrc: "/src/assets/icons/features_items/PowerOff.svg",
         title: "Lorem ipsum, dolor sit amet adipisicing elit.",
         body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
     },
-];
+]);
+
+const handleToggleDropdown = function(id) {
+    for (let feature of features.value) {
+        if (feature.id === id) {
+            feature.isActive = !feature.isActive;
+        } else {
+            feature.isActive = false;
+        }
+    }
+}
 
 </script>
 
@@ -48,10 +64,12 @@ const features = [
             <FeatureDropdown class="features__feature"
             v-for="feature in features"
             :key="feature.id"
+            :id="feature.id"
             :iconSrc="feature.iconSrc"
             :title="feature.title"
             :body="feature.body"
-            isActive />
+            :isActive="feature.isActive"
+            @toggle-dropdown="handleToggleDropdown" />
         </div>
     </div>
 </template>

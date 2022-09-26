@@ -2,6 +2,7 @@
 
 export default {
     props: {
+        id: Number,
         iconSrc: String,
         title: String,
         body: String,
@@ -12,7 +13,8 @@ export default {
 
 <template>
     <div class="feature">
-        <div class="feature__header">
+        <div class="feature__header"
+        @click="$emit('toggle-dropdown', id)">
             <img class="feature__icon"
             :src="iconSrc">
             <h3 class="feature__title"
@@ -33,11 +35,15 @@ export default {
 
 .feature {
     padding: 0.625rem 0;
+    &:hover {
+        background-color: $grey-1;
+    }
     &__header {
         display: flex;
         flex-wrap: nowrap;
         justify-content: flex-start;
         align-items: center;
+        cursor: pointer;
     }
     &__icon {
         width: 2.5rem;
@@ -59,7 +65,8 @@ export default {
         }
     }
     &__text {
-        padding-left: 4rem;
+        padding-left: 4rem;  // make equal to icon size + margin-right
+        padding-top: 0.75rem;
         line-height: 1.172rem;
     }
 }
