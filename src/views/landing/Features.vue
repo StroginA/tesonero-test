@@ -1,5 +1,39 @@
 <script setup>
 import DividerHorizontal from '../../components/common/DividerHorizontal.vue';
+import FeatureDropdown from '../../components/landing/FeatureDropdown.vue';
+
+const features = [
+    {
+        id: 0,
+        iconSrc: "/src/assets/icons/features_items/Device.svg",
+        title: "Lorem ipsum, dolor sit amet adipisicing elit.",
+        body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
+    },
+    {
+        id: 1,
+        iconSrc: "/src/assets/icons/features_items/LED.svg",
+        title: "Lorem ipsum, dolor sit amet adipisicing elit.",
+        body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
+    },
+    {
+        id: 2,
+        iconSrc: "/src/assets/icons/features_items/LightOff.svg",
+        title: "Lorem ipsum, dolor sit amet adipisicing elit.",
+        body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
+    },
+    {
+        id: 3,
+        iconSrc: "/src/assets/icons/features_items/Splitter.svg",
+        title: "Lorem ipsum, dolor sit amet adipisicing elit.",
+        body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
+    },
+    {
+        id: 4,
+        iconSrc: "/src/assets/icons/features_items/PowerOff.svg",
+        title: "Lorem ipsum, dolor sit amet adipisicing elit.",
+        body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
+    },
+];
 
 </script>
 
@@ -9,6 +43,15 @@ import DividerHorizontal from '../../components/common/DividerHorizontal.vue';
             <DividerHorizontal class="divider" />
             <h2 class="h2">Lorem ipsum, dolor sit adipisicing elit.</h2>
             <p class="features__subtitle">Porro ab rerum omnis magnam eligendi error nobis dolore?</p>
+        </div>
+        <div class="features__main">
+            <FeatureDropdown class="features__feature"
+            v-for="feature in features"
+            :key="feature.id"
+            :iconSrc="feature.iconSrc"
+            :title="feature.title"
+            :body="feature.body"
+            isActive />
         </div>
     </div>
 </template>
@@ -37,6 +80,19 @@ import DividerHorizontal from '../../components/common/DividerHorizontal.vue';
     }
     &__subtitle {
         text-align: center;
+    }
+    &__feature {
+        border-bottom: 1px solid $grey-1;
+        &:last-child {
+            border-bottom: unset;
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .features {
+        padding-left: 1rem;
+        padding-right: 2rem;
     }
 }
 </style>

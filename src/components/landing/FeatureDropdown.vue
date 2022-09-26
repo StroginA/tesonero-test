@@ -13,9 +13,10 @@ export default {
 <template>
     <div class="feature">
         <div class="feature__header">
-            <div class="feature__icon">
-            </div>
-            <h3 class="feature__title">{{title}}</h3>
+            <img class="feature__icon"
+            :src="iconSrc">
+            <h3 class="feature__title"
+            :class="{'feature__title_active' : isActive}" >{{title}}</h3>
             <img src="@/assets/icons/common/ArrowMini.svg" 
             class="feature__dropdown-arrow"
             :class="{ 'feature__dropdown-arrow_flipped' : isActive }" />
@@ -31,6 +32,7 @@ export default {
 @import "@/assets/vars";
 
 .feature {
+    padding: 0.625rem 0;
     &__header {
         display: flex;
         flex-wrap: nowrap;
@@ -40,13 +42,15 @@ export default {
     &__icon {
         width: 2.5rem;
         height: 2.5rem;
-        background-image: v-bind(imgSrc);
         margin-right: 1.5rem;
     }
     &__title {
         font-size: 1.5rem;
         font-weight: 700;
         line-height: 1.758rem;
+        &_active {
+            color: $highlight;
+        }
     }
     &__dropdown-arrow {
         margin-left: auto;
