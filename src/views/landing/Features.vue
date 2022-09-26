@@ -107,10 +107,30 @@ const handleToggleDropdown = function(id) {
     }
 }
 
+// more compact for smaller screens
 @media only screen and (max-width: 1200px) {
     .features {
         padding-left: 1rem;
         padding-right: 2rem;
+    }
+}
+
+// touch device
+@media only screen and (max-width: 992px) {
+    .features {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        &__header {
+            margin-top: 1.25rem;
+            margin-bottom: 1.5rem;
+            &>.h2 {
+                font-size: 1.5rem;
+                line-height: 1.758rem;
+            }
+            &>.divider {
+                margin-bottom: 1rem;
+            }
+        }
     }
 }
 </style>
