@@ -8,8 +8,8 @@ import Features from './landing/Features.vue';
 <template>
     <Showcase />
     <div class="landing-cols">
-        <Features class="landing-cols__col" />
         <Quotes class="landing-cols__col" />
+        <Features class="landing-cols__col" />
     </div>
 </template>
 
