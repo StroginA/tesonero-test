@@ -83,11 +83,11 @@ const handleToggleDropdown = function(id) {
     background-color: $white-2;
     padding-left: 5.5625rem;
     padding-right: 10.4375rem;
+    padding-top: 6.3125rem;
     &__header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 6.3125rem;
         margin-bottom: 0.5rem;
         &>.divider {
             margin-bottom: 0.75rem;
@@ -118,14 +118,12 @@ const handleToggleDropdown = function(id) {
 // touch device
 @media only screen and (max-width: 992px) {
     .features {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding: 1.25rem 1rem;
         &__header {
-            margin-top: 1.25rem;
             margin-bottom: 1.5rem;
             &>.h2 {
                 font-size: 1.5rem;
-                line-height: 1.758rem;
+                line-height: 1.75rem;
             }
             &>.divider {
                 margin-bottom: 1rem;

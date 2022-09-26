@@ -27,8 +27,8 @@ import Quote from '../../components/landing/Quote.vue';
     flex-direction: column;
     background-color: $white-3;
     padding: 0 5rem;
+    padding-top: 6.3125rem;
     &__header {  
-        margin-top: 6.3125rem;
         margin-bottom: 3rem;
         display: flex;
         flex-direction: column;
@@ -63,12 +63,12 @@ import Quote from '../../components/landing/Quote.vue';
         background-color: $white-1;
         padding-left: 1rem;
         padding-right: 1rem;
+        padding-top: 1.6875rem;
         &__header {
-            margin-top: 1.6875rem;
             margin-bottom: 2.75rem;
             &>.h2 {
                 font-size: 1.5rem;
-                line-height: 1.758rem;
+                line-height: 1.75rem;
             }
             &>.divider {
                 margin-bottom: 1rem;
