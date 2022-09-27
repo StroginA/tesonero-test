@@ -1,0 +1,22 @@
+{
+  "name": "vue-2-version",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "swiper-vue2": "^1.0.10",
+    "vue": "^2.7.7",
+    "vue-window-size": "^1.0.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^2.0.0",
+    "@vitejs/plugin-vue2": "^1.1.2",
+    "sass": "^1.55.0",
+    "terser": "^5.14.2",
+    "vite": "^3.0.2"
+  }
+}

@@ -1,0 +1,23 @@
+@import "@/assets/vars";
+
+.swiper-container {
+    overflow: visible;
+    --swiper-navigation-size: 1.5rem;
+    // hack because $var would not work
+    --swiper-pagination-color: #A6ABBD;
+    & .swiper-button-next, .swiper-button-prev {
+        color: $grey-2;
+        top: unset;
+        bottom: -2rem;
+        z-index: 99;
+    }
+    & .swiper-button-next {
+        right: 5rem;
+    }
+    & .swiper-button-prev {
+        left: 5rem;
+    }
+    & .swiper-pagination-bullets {
+        bottom: -2rem;
+    }
+}
