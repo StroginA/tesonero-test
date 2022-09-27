@@ -1,4 +1,23 @@
-.swiper-pagination-horizontal {
-    bottom: -0.5rem;
-    z-index: 10;
+@import "@/assets/vars";
+
+.swiper {
+    --swiper-navigation-size: 1.5rem;
+    // hack because $var would not work
+    --swiper-pagination-color: #A6ABBD;
+    & .swiper-button-next, .swiper-button-prev {
+        color: $grey-2;
+        top: unset;
+        bottom: -2rem;
+        z-index: 99;
+    }
+    & .swiper-button-next {
+        right: 5rem;
+    }
+    & .swiper-button-prev {
+        left: 5rem;
+    }
+}
+.swiper-horizontal > .swiper-pagination-bullets, 
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: -1.5rem;
 }

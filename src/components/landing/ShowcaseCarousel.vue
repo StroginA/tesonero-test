@@ -2,10 +2,10 @@
 import ShowcaseItem from '../../components/landing/ShowcaseItem.vue';
 import {VueScreenSizeMixin} from 'vue-screen-size';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/a11y';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
+import 'swiper/scss/a11y';
 import { Navigation, Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -74,7 +74,7 @@ const items = [
         :slides-per-view="1"
         loop
         navigation
-        pagination>
+        :pagination="{dynamicBullets: true, dynamicMainBullets: 6}">
             <swiper-slide class="carousel__slide" 
             v-for="item in items">
                 <ShowcaseItem  class="carousel__item"
@@ -102,6 +102,9 @@ const items = [
         &__item {
             margin: 0 auto;
         }
+    }
+    .swiper {
+        overflow: visible;
     }
 }
 </style>
