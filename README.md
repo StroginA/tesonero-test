@@ -23,13 +23,13 @@ npm run build
 
 - [ ] Support latest browsers + IE11
 - [X] No `grid` and `bootstrap`
-- [ ] Adaptive to all widths (min 320px)
+- [X] Adaptive to all widths (min 320px)
 - [X] Text blocks adaptive to text amount changes
 - [X] Optimized graphics
 - [X] Menu items have :hover
 - [ ] First block has slider on mobile devices (swiper/slick)
 - [X] Clicking on Q/A headers opens that item's body and collapses others
-- [ ] Main screen picture must be centered even on text changes
+- [X] Main screen picture must be centered even on text changes
 
 Additional:
 

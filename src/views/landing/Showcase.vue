@@ -5,7 +5,7 @@ import ShowcaseItem from '../../components/landing/ShowcaseItem.vue';
 const items = [
     {
         id: 0,
-        iconSrc: "/src/assets/icons/showcase_items/Headset.svg",
+        iconSrc: "/src/assets/icons/showcase_items/Device.svg",
         description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
     },
     {
@@ -15,12 +15,12 @@ const items = [
     },
     {
         id: 2,
-        iconSrc: "/src/assets/icons/showcase_items/Device.svg",
+        iconSrc: "/src/assets/icons/showcase_items/Headset.svg",
         description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
     },
     {
         id: 3,
-        iconSrc: "/src/assets/icons/showcase_items/Square.svg",
+        iconSrc: "/src/assets/icons/showcase_items/Clipboard.svg",
         description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
     },
     {
@@ -30,7 +30,7 @@ const items = [
     },
     {
         id: 5,
-        iconSrc: "/src/assets/icons/showcase_items/Clipboard.svg",
+        iconSrc: "/src/assets/icons/showcase_items/Square.svg",
         description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
     },
 ];
@@ -39,10 +39,13 @@ const items = [
 
 <template>
     <div class="showcase">
-        <img class="showcase__bg-secondary showcase__bg-secondary_left"
+        <img class="showcase__bg-main showcase__bg-main_touchscreen" 
+        src="@/assets/icons/bg/Berry.png"
+        alt="Berry image" />
+        <img class="showcase__bg-secondary showcase__bg-secondary_left" 
         src="@/assets/icons/bg/Drops.png"
         alt="Water drops" />
-        <img class="showcase__bg-secondary showcase__bg-secondary_right"
+        <img class="showcase__bg-secondary showcase__bg-secondary_right" 
         src="@/assets/icons/bg/Drops.png"
         alt="Water drops" />
         <div class="showcase__header">
@@ -50,7 +53,7 @@ const items = [
             <h1 class="h1">Lorem ipsum, dolor sit amet consectetur</h1>
         </div>
         <div class="showcase__main">
-            <img class="showcase__bg-main" 
+            <img class="showcase__bg-main showcase__bg-main_desktop" 
             src="@/assets/icons/bg/Berry.png"
             alt="Berry image" />
             <div class="showcase__items">
@@ -86,29 +89,40 @@ const items = [
 
     &__items {
         margin: 8rem auto 5.5rem;
-        @include on-circle($item-count: 6, $circle-size: 40rem, $item-size: 12rem);
+        // have to use phone-first here for convenience of including
+        @media only screen and (min-width: 992px) {
+            @include on-circle($item-count: 6, $circle-size: 40rem, $item-size: 12rem);
+        } 
     }
 
     &__bg-main {
-        position: absolute;
-        display: block;
-        top: 50%;
-        left: 50%;
-        // centering
-        margin: -8rem -13.625rem;
-        width: 27.25rem;
         filter: drop-shadow(0px 40px 80px rgba(0, 0, 0, 0.16));
+        &_desktop {
+            position: absolute;
+            display: block;
+            top: 50%;
+            left: 50%;
+            // centering
+            margin: -8rem -13.625rem;
+            width: 27.25rem;
+        }
+        &_touchscreen {
+            display: none;
+        }
     }
+
     &__bg-secondary {
         position: absolute;
         display: block;
         filter: blur(5px);
+
         &_left {
             left: 0;
             bottom: -5rem;
             width: 27.5rem;
             transform: rotate(55.73deg);
         }
+
         &_right {
             top: 5rem;
             right: -4rem;
@@ -124,9 +138,23 @@ const items = [
         background: 0;
         padding-top: 4rem;
         padding-bottom: 5rem;
+        
+        &__bg-main {
+            &_desktop {
+                display: none;
+            }
+            &_touchscreen {
+                display: block;
+                margin: 0 auto 2.375rem;
+            }
+
+            width: 13.625rem;
+        }
+
         &__bg-secondary {
             display: none;
         }
+
         &__header {
             &>.h1 {
                 font-size: 1.5rem;
@@ -137,7 +165,11 @@ const items = [
                 display: none;
             }
         }
-
+        &__items {
+            margin: 0;
+            display: flex;
+            overflow-x: auto;
+        }
     }
 }
 </style>
