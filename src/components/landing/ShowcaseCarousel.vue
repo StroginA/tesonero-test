@@ -6,6 +6,10 @@ import { Navigation, Pagination } from 'swiper';
 import { SwiperCore, Swiper, SwiperSlide } from 'swiper-vue2';
 
 import 'swiper/swiper-bundle.css';
+import headsetSrc from '@/assets/icons/showcase_items/Headset.svg';
+import deviceSrc from '@/assets/icons/showcase_items/Device.svg';
+import squareSrc from '@/assets/icons/showcase_items/Square.svg';
+import clipboardSrc from '@/assets/icons/showcase_items/Clipboard.svg';
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -18,42 +22,37 @@ export default {
             items: [
                 {
                     id: 0,
-                    iconSrc: this.constructURL('Device.svg'),
+                    iconSrc: deviceSrc,
                     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
                 },
                 {
                     id: 1,
-                    iconSrc: this.constructURL('Square.svg'),
+                    iconSrc: squareSrc,
                     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
                 },
                 {
                     id: 2,
-                    iconSrc: this.constructURL('Headset.svg'),
+                    iconSrc: headsetSrc,
                     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
                 },
                 {
                     id: 3,
-                    iconSrc: this.constructURL('Clipboard.svg'),
+                    iconSrc: clipboardSrc,
                     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
                 },
                 {
                     id: 4,
-                    iconSrc: this.constructURL('Headset.svg'),
+                    iconSrc: headsetSrc,
                     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
                 },
                 {
                     id: 5,
-                    iconSrc: this.constructURL('Square.svg'),
+                    iconSrc: squareSrc,
                     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
                 },
             ]
         })
     },
-    methods: {
-        constructURL: function (filename) {
-            return new URL(filename, import.meta.url).href;
-        }
-    }
 }
 </script>
 

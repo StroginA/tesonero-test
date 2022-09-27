@@ -1,6 +1,12 @@
 <script>
 import DividerHorizontal from '../../components/common/DividerHorizontal.vue';
 import FeatureDropdown from '../../components/landing/FeatureDropdown.vue';
+import deviceSrc from '@/assets/icons/features_items/Device.svg';
+import ledSrc from '@/assets/icons/features_items/LED.svg';
+import lightOffSrc from '@/assets/icons/features_items/LightOff.svg';
+import splitterSrc from '@/assets/icons/features_items/Splitter.svg';
+import powerOffSrc from '@/assets/icons/features_items/PowerOff.svg';
+
 
 export default {
     components: { DividerHorizontal, FeatureDropdown },
@@ -10,35 +16,35 @@ export default {
                 {
                     id: 0,
                     isActive: false,
-                    iconSrc: this.constructURL('Device.svg'),
+                    iconSrc: deviceSrc,
                     title: "Lorem ipsum, dolor sit amet adipisicing elit.",
                     body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
                 },
                 {
                     id: 1,
                     isActive: false,
-                    iconSrc: this.constructURL('LED.svg'),
+                    iconSrc: ledSrc,
                     title: "Lorem ipsum, dolor sit amet adipisicing elit.",
                     body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
                 },
                 {
                     id: 2,
                     isActive: false,
-                    iconSrc: this.constructURL('LightOff.svg'),
+                    iconSrc: lightOffSrc,
                     title: "Lorem ipsum, dolor sit amet adipisicing elit.",
                     body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
                 },
                 {
                     id: 3,
                     isActive: false,
-                    iconSrc: this.constructURL('Splitter.svg'),
+                    iconSrc: splitterSrc,
                     title: "Lorem ipsum, dolor sit amet adipisicing elit.",
                     body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
                 },
                 {
                     id: 4,
                     isActive: false,
-                    iconSrc: this.constructURL('PowerOff.svg'),
+                    iconSrc: powerOffSrc,
                     title: "Lorem ipsum, dolor sit amet adipisicing elit.",
                     body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
                 },
@@ -46,9 +52,6 @@ export default {
         })
     },
     methods: {
-        constructURL: function (filename) {
-            return new URL(filename, import.meta.url).href;
-        },
         handleToggleDropdown: function (id) {
             for (let feature of this.features) {
                 if (feature.id === id) {
