@@ -7,8 +7,8 @@
 
     .divider {
         width: 184px;
-        border-style: solid;
-        border-width: 2px;
+        border-top-style: solid;
+        border-width: 4px;
         border-color: $highlight;
     }
 </style>

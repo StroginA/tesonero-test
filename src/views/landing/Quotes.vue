@@ -54,6 +54,7 @@ import Quote from '../../components/landing/Quote.vue';
 @media only screen and (max-width: 1200px) {
     .quotes {
         padding: 0 1rem;
+        padding-top: 6.3125rem;
     }
 }
 
