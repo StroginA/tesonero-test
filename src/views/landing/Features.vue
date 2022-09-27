@@ -47,7 +47,7 @@ export default {
     },
     methods: {
         constructURL: function (filename) {
-            return new URL('./icons_features/' + filename, import.meta.url).href;
+            return new URL(filename, import.meta.url).href;
         },
         handleToggleDropdown: function (id) {
             for (let feature of this.features) {

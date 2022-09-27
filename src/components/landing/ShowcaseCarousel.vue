@@ -51,7 +51,7 @@ export default {
     },
     methods: {
         constructURL: function (filename) {
-            return new URL('./icons_showcase/' + filename, import.meta.url).href;
+            return new URL(filename, import.meta.url).href;
         }
     }
 }
