@@ -1,6 +1,6 @@
-import { createApp } from 'vue'
+import Vue from 'vue'
 import App from './App.vue'
 
 import './assets/main.scss'
 
-createApp(App).mount('#app')
+export default new Vue({render: h => h(App)}).$mount('#app');

@@ -4,14 +4,16 @@ import Navbar from './components/Navbar.vue';
 </script>
 
 <template>
-  <Navbar class="nav" />
-  <LandingPage />
+  <div class="app">
+    <Navbar class="app__nav" />
+    <LandingPage />
+  </div>
 </template>
 
 <style scoped lang="scss">
 // touch device
 @media only screen and (max-width: 992px) {
-  .nav {
+  .app__nav {
     position: sticky;
     top: 0;
   }

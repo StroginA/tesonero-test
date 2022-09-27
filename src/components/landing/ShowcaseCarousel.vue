@@ -1,85 +1,81 @@
-<script setup>
-import ShowcaseItem from '../../components/landing/ShowcaseItem.vue';
-import {VueScreenSizeMixin} from 'vue-screen-size';
-
-import 'swiper/scss';
-import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
-import 'swiper/scss/a11y';
-import { Navigation, Pagination, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-
-
-const modules = [Navigation, Pagination, A11y];
-
-const items = [
-    {
-        id: 0,
-        iconSrc: "/src/assets/icons/showcase_items/Device.svg",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-    },
-    {
-        id: 1,
-        iconSrc: "/src/assets/icons/showcase_items/Square.svg",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-    },
-    {
-        id: 2,
-        iconSrc: "/src/assets/icons/showcase_items/Headset.svg",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-    },
-    {
-        id: 3,
-        iconSrc: "/src/assets/icons/showcase_items/Clipboard.svg",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-    },
-    {
-        id: 4,
-        iconSrc: "/src/assets/icons/showcase_items/Headset.svg",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-    },
-    {
-        id: 5,
-        iconSrc: "/src/assets/icons/showcase_items/Square.svg",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-    },
-];
-
-</script>
-
 <script>
-    export default {
-        mixins: [VueScreenSizeMixin],
-        modules: [Navigation, Pagination, A11y],
+import ShowcaseItem from '../../components/landing/ShowcaseItem.vue';
+import { vueWindowSizeMixin } from 'vue-window-size/option-api';
+
+import { Navigation, Pagination } from 'swiper';
+import { SwiperCore, Swiper, SwiperSlide } from 'swiper-vue2';
+
+import 'swiper/swiper-bundle.css';
+
+SwiperCore.use([Navigation, Pagination]);
+
+export default {
+    mixins: [vueWindowSizeMixin()],
+    components: { ShowcaseItem, Swiper, SwiperSlide },
+    data() {
+        return ({
+            modules: { Navigation, Pagination },
+            items: [
+                {
+                    id: 0,
+                    iconSrc: "/src/assets/icons/showcase_items/Device.svg",
+                    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+                },
+                {
+                    id: 1,
+                    iconSrc: "/src/assets/icons/showcase_items/Square.svg",
+                    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+                },
+                {
+                    id: 2,
+                    iconSrc: "/src/assets/icons/showcase_items/Headset.svg",
+                    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+                },
+                {
+                    id: 3,
+                    iconSrc: "/src/assets/icons/showcase_items/Clipboard.svg",
+                    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+                },
+                {
+                    id: 4,
+                    iconSrc: "/src/assets/icons/showcase_items/Headset.svg",
+                    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+                },
+                {
+                    id: 5,
+                    iconSrc: "/src/assets/icons/showcase_items/Square.svg",
+                    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+                },
+            ]
+        })
     }
+}
 </script>
 
 <template>
     <!--to inherit class properly-->
-    <div> 
+    <div>
         <!--desktop-->
-        <div class="carousel"
-        v-if="$vssWidth >= 992">
+        <div v-if="$windowWidth >= 992" class="carousel">
             <ShowcaseItem class="carousel__item" 
-            v-for="item in items"
+            v-for="item in items" 
             :key="item.id" 
             :iconSrc="item.iconSrc"
             :description="item.description" />
         </div>
 
         <!-- touch device -->
-        <swiper v-else
-        class="carousel"
-        :modules="modules"
-        :slides-per-view="1"
-        loop
-        navigation
-        :pagination="{dynamicBullets: true, dynamicMainBullets: 6}">
+        <swiper v-else class="carousel" 
+        :modules="modules" 
+        :slides-per-view="1" 
+        loop 
+        navigation 
+        pagination>
             <swiper-slide class="carousel__slide" 
-            v-for="item in items">
-                <ShowcaseItem  class="carousel__item"
-                :key="item.id" 
-                :iconSrc="item.iconSrc"
+            v-for="item in items" 
+            :key="item.id">
+                <ShowcaseItem class="carousel__item" 
+                :iconSrc="item.iconSrc" 
                 :description="item.description" />
             </swiper-slide>
         </swiper>
@@ -92,6 +88,7 @@ const items = [
 
 .carousel {
     margin: 0 auto;
+
     @media only screen and (min-width: 992px) {
         @include on-circle($item-count: 6, $circle-size: 40rem, $item-size: 12rem);
     }
@@ -102,9 +99,6 @@ const items = [
         &__item {
             margin: 0 auto;
         }
-    }
-    .swiper {
-        overflow: visible;
     }
 }
 </style>

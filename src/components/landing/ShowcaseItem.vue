@@ -1,6 +1,6 @@
 <script>
-
 export default {
+    name: 'ShowcaseItem',
     props: {
         iconSrc: String,
         description: String

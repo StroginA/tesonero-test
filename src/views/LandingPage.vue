@@ -6,10 +6,12 @@ import Features from './landing/Features.vue';
 </script>
 
 <template>
-    <Showcase />
-    <div class="landing-cols">
-        <Quotes class="landing-cols__col" />
-        <Features class="landing-cols__col" />
+    <div class="landing">
+        <Showcase />
+        <div class="landing-cols">
+            <Quotes class="landing-cols__col" />
+            <Features class="landing-cols__col" />
+        </div>
     </div>
 </template>
 

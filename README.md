@@ -1,6 +1,5 @@
 # tesonero-test
 
-
 ## Project Setup
 
 ```sh
