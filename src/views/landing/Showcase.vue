@@ -1,39 +1,6 @@
 <script setup>
 import DividerHorizontal from '../../components/common/DividerHorizontal.vue';
-import ShowcaseItem from '../../components/landing/ShowcaseItem.vue';
-
-const items = [
-    {
-        id: 0,
-        iconSrc: "/src/assets/icons/showcase_items/Device.svg",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-    },
-    {
-        id: 1,
-        iconSrc: "/src/assets/icons/showcase_items/Square.svg",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-    },
-    {
-        id: 2,
-        iconSrc: "/src/assets/icons/showcase_items/Headset.svg",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-    },
-    {
-        id: 3,
-        iconSrc: "/src/assets/icons/showcase_items/Clipboard.svg",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-    },
-    {
-        id: 4,
-        iconSrc: "/src/assets/icons/showcase_items/Headset.svg",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-    },
-    {
-        id: 5,
-        iconSrc: "/src/assets/icons/showcase_items/Square.svg",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-    },
-];
+import ShowcaseCarousel from '../../components/landing/ShowcaseCarousel.vue';
 
 </script>
 
@@ -56,13 +23,7 @@ const items = [
             <img class="showcase__bg-main showcase__bg-main_desktop" 
             src="@/assets/icons/bg/Berry.png"
             alt="Berry image" />
-            <div class="showcase__items">
-                <ShowcaseItem class="showcase__item" 
-                v-for="item in items" 
-                :key="item.id" 
-                :iconSrc="item.iconSrc"
-                :description="item.description" />
-            </div>
+            <ShowcaseCarousel class="showcase__items" />
         </div>
     </div>
 </template>
@@ -89,10 +50,6 @@ const items = [
 
     &__items {
         margin: 8rem auto 5.5rem;
-        // have to use phone-first here for convenience of including
-        @media only screen and (min-width: 992px) {
-            @include on-circle($item-count: 6, $circle-size: 40rem, $item-size: 12rem);
-        } 
     }
 
     &__bg-main {
@@ -140,15 +97,14 @@ const items = [
         padding-bottom: 5rem;
         
         &__bg-main {
-            &_desktop {
-                display: none;
-            }
+            width: 13.625rem;
             &_touchscreen {
                 display: block;
                 margin: 0 auto 2.375rem;
             }
-
-            width: 13.625rem;
+            &_desktop {
+                display: none;
+            }
         }
 
         &__bg-secondary {
@@ -167,8 +123,6 @@ const items = [
         }
         &__items {
             margin: 0;
-            display: flex;
-            overflow-x: auto;
         }
     }
 }
