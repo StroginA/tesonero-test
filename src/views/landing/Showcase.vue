@@ -39,18 +39,26 @@ const items = [
 
 <template>
     <div class="showcase">
+        <img class="showcase__bg-secondary showcase__bg-secondary_left"
+        src="@/assets/icons/bg/Drops.png"
+        alt="Water drops" />
+        <img class="showcase__bg-secondary showcase__bg-secondary_right"
+        src="@/assets/icons/bg/Drops.png"
+        alt="Water drops" />
         <div class="showcase__header">
             <DividerHorizontal class="divider" />
             <h1 class="h1">Lorem ipsum, dolor sit amet consectetur</h1>
         </div>
         <div class="showcase__main">
+            <img class="showcase__bg-main" 
+            src="@/assets/icons/bg/Berry.png"
+            alt="Berry image" />
             <div class="showcase__items">
-                <ShowcaseItem class="showcase__item"
-                v-for="item in items"
-                :key="item.id"
+                <ShowcaseItem class="showcase__item" 
+                v-for="item in items" 
+                :key="item.id" 
                 :iconSrc="item.iconSrc"
-                :description="item.description"
-                 />
+                :description="item.description" />
             </div>
         </div>
     </div>
@@ -68,15 +76,45 @@ const items = [
     &__header {
         display: flex;
         flex-direction: column;
-        align-items: center;    
+        align-items: center;
         text-transform: uppercase;
+
         &>.divider {
             margin-bottom: 1.375rem;
         }
     }
+
     &__items {
         margin: 8rem auto 5.5rem;
-        @include on-circle($item-count: 6, $circle-size: 40rem, $item-size: 12rem); 
+        @include on-circle($item-count: 6, $circle-size: 40rem, $item-size: 12rem);
+    }
+
+    &__bg-main {
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        // centering
+        margin: -8rem -13.625rem;
+        width: 27.25rem;
+        filter: drop-shadow(0px 40px 80px rgba(0, 0, 0, 0.16));
+    }
+    &__bg-secondary {
+        position: absolute;
+        display: block;
+        filter: blur(5px);
+        &_left {
+            left: 0;
+            bottom: -5rem;
+            width: 27.5rem;
+            transform: rotate(55.73deg);
+        }
+        &_right {
+            top: 5rem;
+            right: -4rem;
+            width: 36.75rem;
+            transform: rotate(135.54deg);
+        }
     }
 }
 
@@ -86,15 +124,20 @@ const items = [
         background: 0;
         padding-top: 4rem;
         padding-bottom: 5rem;
+        &__bg-secondary {
+            display: none;
+        }
         &__header {
             &>.h1 {
                 font-size: 1.5rem;
                 line-height: 1.75rem;
             }
+
             &>.divider {
                 display: none;
             }
         }
+
     }
 }
 </style>

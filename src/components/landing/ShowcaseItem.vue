@@ -10,8 +10,11 @@ export default {
 
 <template>
     <div class="item">
+        <div class="item__wrapper">
         <img class="item__icon" :src="iconSrc" />
         <p class="item__description">{{description}}</p>
+
+        </div>
     </div>
 </template>
 
@@ -19,9 +22,11 @@ export default {
 @import "@/assets/vars";
 
 .item {
-    display: flex;
+    &__wrapper {
+        display: flex;
     flex-direction: column;
     align-items: center;
+}
     width: 12rem;
     &__icon {
         width: 6.25rem;
