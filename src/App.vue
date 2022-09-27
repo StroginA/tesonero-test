@@ -1,6 +1,9 @@
-<script setup>
+<script>
 import LandingPage from './views/LandingPage.vue';
 import Navbar from './components/Navbar.vue';
+export default {
+  components: {LandingPage, Navbar}
+}
 </script>
 
 <template>
