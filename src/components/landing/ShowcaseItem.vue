@@ -4,7 +4,7 @@ export default {
     props: {
         iconSrc: String,
         description: String
-    }
+    },
 }
 </script>
 

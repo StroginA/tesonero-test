@@ -1,56 +1,66 @@
-<script setup>
-import { ref } from 'vue';
+<script>
 import DividerHorizontal from '../../components/common/DividerHorizontal.vue';
 import FeatureDropdown from '../../components/landing/FeatureDropdown.vue';
 
-const features = ref([
-    {
-        id: 0,
-        isActive: false,
-        iconSrc: "/src/assets/icons/features_items/Device.svg",
-        title: "Lorem ipsum, dolor sit amet adipisicing elit.",
-        body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
+export default {
+    components: { DividerHorizontal, FeatureDropdown },
+    data() {
+        return ({
+            features: [
+                {
+                    id: 0,
+                    isActive: false,
+                    iconSrc: this.constructURL('Device.svg'),
+                    title: "Lorem ipsum, dolor sit amet adipisicing elit.",
+                    body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
+                },
+                {
+                    id: 1,
+                    isActive: false,
+                    iconSrc: this.constructURL('LED.svg'),
+                    title: "Lorem ipsum, dolor sit amet adipisicing elit.",
+                    body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
+                },
+                {
+                    id: 2,
+                    isActive: false,
+                    iconSrc: this.constructURL('LightOff.svg'),
+                    title: "Lorem ipsum, dolor sit amet adipisicing elit.",
+                    body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
+                },
+                {
+                    id: 3,
+                    isActive: false,
+                    iconSrc: this.constructURL('Splitter.svg'),
+                    title: "Lorem ipsum, dolor sit amet adipisicing elit.",
+                    body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
+                },
+                {
+                    id: 4,
+                    isActive: false,
+                    iconSrc: this.constructURL('PowerOff.svg'),
+                    title: "Lorem ipsum, dolor sit amet adipisicing elit.",
+                    body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
+                },
+            ]
+        })
     },
-    {
-        id: 1,
-        isActive: false,
-        iconSrc: "/src/assets/icons/features_items/LED.svg",
-        title: "Lorem ipsum, dolor sit amet adipisicing elit.",
-        body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
-    },
-    {
-        id: 2,
-        isActive: false,
-        iconSrc: "/src/assets/icons/features_items/LightOff.svg",
-        title: "Lorem ipsum, dolor sit amet adipisicing elit.",
-        body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
-    },
-    {
-        id: 3,
-        isActive: false,
-        iconSrc: "/src/assets/icons/features_items/Splitter.svg",
-        title: "Lorem ipsum, dolor sit amet adipisicing elit.",
-        body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
-    },
-    {
-        id: 4,
-        isActive: false,
-        iconSrc: "/src/assets/icons/features_items/PowerOff.svg",
-        title: "Lorem ipsum, dolor sit amet adipisicing elit.",
-        body: "Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit"
-    },
-]);
-
-const handleToggleDropdown = function(id) {
-    for (let feature of features.value) {
-        if (feature.id === id) {
-            feature.isActive = !feature.isActive;
-        } else {
-            feature.isActive = false;
+    methods: {
+        constructURL: function (filename) {
+            return new URL('./icons_features/' + filename, import.meta.url).href;
+        },
+        handleToggleDropdown: function (id) {
+            for (let feature of this.features) {
+                if (feature.id === id) {
+                    feature.isActive = !feature.isActive;
+                } else {
+                    feature.isActive = false;
+                }
+            }
         }
+
     }
 }
-
 </script>
 
 <template>
@@ -61,15 +71,9 @@ const handleToggleDropdown = function(id) {
             <p class="features__subtitle">Porro ab rerum omnis magnam eligendi error nobis dolore?</p>
         </div>
         <div class="features__main">
-            <FeatureDropdown class="features__feature"
-            v-for="feature in features"
-            :key="feature.id"
-            :id="feature.id"
-            :iconSrc="feature.iconSrc"
-            :title="feature.title"
-            :body="feature.body"
-            :isActive="feature.isActive"
-            @toggle-dropdown="handleToggleDropdown" />
+            <FeatureDropdown class="features__feature" v-for="feature in features" :key="feature.id" :id="feature.id"
+                :iconSrc="feature.iconSrc" :title="feature.title" :body="feature.body" :isActive="feature.isActive"
+                @toggle-dropdown="handleToggleDropdown" />
         </div>
     </div>
 </template>
@@ -84,23 +88,29 @@ const handleToggleDropdown = function(id) {
     padding-left: 5.5625rem;
     padding-right: 10.4375rem;
     padding-top: 6.3125rem;
+
     &__header {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-bottom: 0.5rem;
+
         &>.divider {
             margin-bottom: 0.75rem;
         }
+
         &>.h2 {
             margin-bottom: 1.5rem;
         }
     }
+
     &__subtitle {
         text-align: center;
     }
+
     &__feature {
         border-bottom: 1px solid $grey-1;
+
         &:last-child {
             border-bottom: unset;
         }
@@ -119,12 +129,15 @@ const handleToggleDropdown = function(id) {
 @media only screen and (max-width: 992px) {
     .features {
         padding: 1.25rem 1rem;
+
         &__header {
             margin-bottom: 1.5rem;
+
             &>.h2 {
                 font-size: 1.5rem;
                 line-height: 1.75rem;
             }
+
             &>.divider {
                 margin-bottom: 1rem;
             }

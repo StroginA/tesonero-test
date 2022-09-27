@@ -18,36 +18,41 @@ export default {
             items: [
                 {
                     id: 0,
-                    iconSrc: "/src/assets/icons/showcase_items/Device.svg",
+                    iconSrc: this.constructURL('Device.svg'),
                     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
                 },
                 {
                     id: 1,
-                    iconSrc: "/src/assets/icons/showcase_items/Square.svg",
+                    iconSrc: this.constructURL('Square.svg'),
                     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
                 },
                 {
                     id: 2,
-                    iconSrc: "/src/assets/icons/showcase_items/Headset.svg",
+                    iconSrc: this.constructURL('Headset.svg'),
                     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
                 },
                 {
                     id: 3,
-                    iconSrc: "/src/assets/icons/showcase_items/Clipboard.svg",
+                    iconSrc: this.constructURL('Clipboard.svg'),
                     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
                 },
                 {
                     id: 4,
-                    iconSrc: "/src/assets/icons/showcase_items/Headset.svg",
+                    iconSrc: this.constructURL('Headset.svg'),
                     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
                 },
                 {
                     id: 5,
-                    iconSrc: "/src/assets/icons/showcase_items/Square.svg",
+                    iconSrc: this.constructURL('Square.svg'),
                     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
                 },
             ]
         })
+    },
+    methods: {
+        constructURL: function (filename) {
+            return new URL('./icons_showcase/' + filename, import.meta.url).href;
+        }
     }
 }
 </script>
